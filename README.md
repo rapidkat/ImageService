@@ -5,4 +5,4 @@ An Image service using Nodejs
 2. Use nodejs and and upload and download verbs
 3. Postgre DB for image meta data - set and get image meta data.
 4. Image paths stored on file system.
-
+5. Jamming to the tunes of Mitch Murder.
