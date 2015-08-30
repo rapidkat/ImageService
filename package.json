@@ -1,0 +1,11 @@
+{
+	"name":"ImageService",
+	"version":"1.0.0",
+	"description": "Prototype image service",
+	"GitRepro":"https://github.com/rapidkat/ImageService",
+	"dependencies" :
+	{
+		"express": "~4.10.2",	
+		"multer": "~0.1.6"
+	}	
+}
