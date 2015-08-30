@@ -1,8 +1,12 @@
 {
 	"name":"ImageService",
 	"version":"1.0.0",
+	"author": "Tze Lee",
 	"description": "Prototype image service",
-	"GitRepro":"https://github.com/rapidkat/ImageService",
+	"repository": {
+  		"type": "git",
+  		"url": "https://github.com/rapidkat/ImageService"
+	},
 	"dependencies" :
 	{
 		"express": "~4.10.2",	
