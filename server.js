@@ -6,6 +6,8 @@ var fs = require("fs");
 var app = express();
 var done = false;
 
+app.set('port', (process.env.PORT || 5000));
+
 /*Configuring multer.*/
 app.use(multer({ dest: './uploads/',
  rename: function (fieldname, filename) {
@@ -34,6 +36,6 @@ app.post('/api/photo',function(req,res){
 
 
 /*Run the server.*/
-app.listen(3000,function(){
-    console.log("Working on port 3000");
+app.listen(app.get('port'),function(){
+    console.log("Working on port " + app.get('port'));
 });
