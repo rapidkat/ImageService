@@ -8,8 +8,9 @@
   		"url": "https://github.com/rapidkat/ImageService"
 	},
 	"dependencies" :
-	{
+	{	
 		"express": "~4.10.2",	
-		"multer": "~0.1.6"
+		"multer": "~0.1.6",
+		"pg": "~4.4.1"
 	}	
 }

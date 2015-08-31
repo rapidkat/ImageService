@@ -8,6 +8,11 @@ var done = false;
 
 app.set('port', (process.env.PORT || 5000));
 
+/* DB configuration */
+
+var db = require("./db");
+db.set(app);
+
 /*Configuring multer.*/
 app.use(multer({ dest: './uploads/',
  rename: function (fieldname, filename) {
@@ -21,6 +26,7 @@ onFileUploadComplete: function (file) {
   done=true;
 }
 }));
+
 
 /*Handling routes.*/
 var routes = require('./routes');
