@@ -21,7 +21,8 @@ app.use(multer({ dest: './uploads/',
   },
 onFileUploadStart: function (file) {
   /* insert into the DB the file name*/
-  console.log(file.originalname + ' is starting ...')
+  console.log(file.originalname + ' is starting ...');
+  console.log("DB query:::" + queryDb.insertImageMetaDataByUser(pg, file));  
 },
 onFileUploadComplete: function (file) {
   console.log(file.fieldname + ' uploaded to  ' + file.path)
