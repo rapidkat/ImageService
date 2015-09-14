@@ -24,7 +24,7 @@ QueryDB.prototype.insertImageMetaDataByUser = function insertImageMetaDataByUser
     if(err) {
       return console.error('error fetching client from pool', err);
     }
-    client.query('INSERT into image_table_meta_data (user_id, image_name, image_size) VALUES ($1, $2, $3)', ['0', file.originalname, 1024], function(err, result) {
+    client.query('INSERT into image_table_meta_data (user_id, image_name, image_size) VALUES ($1, $2, $3)', ['0', file.name, file.size], function(err, result) {
       if(err) {
         return console.error('error running query', err);
       }
