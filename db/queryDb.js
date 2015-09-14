@@ -18,6 +18,22 @@ QueryDB.prototype.getImagesByUser = function getImagesByUser(pg)
     });
   });
 };
+QueryDB.prototype.insertImageMetaDataByUser = function insertImageMetaDataByUser(pg, file)
+{
+  pg.connect(this.getConnectionString(true), function(err, client, done) {
+    if(err) {
+      return console.error('error fetching client from pool', err);
+    }
+    client.query('INSERT into image_table_meta_data (user_id, image_name, image_size) VALUES ($1, $2, $3)', ['0', file.originalname, 1024], function(err, result) {
+      if(err) {
+        return console.error('error running query', err);
+      }
+      console.log("Testing insert:: " + result);
+    });
+  });
+
+};
+
 QueryDB.prototype.getConnectionString = function getConnectionString(isLocalDB)
 {
     return (isLocalDB ? "postgres://postgres:TheBaliYellowWave@localhost/postgres" 
