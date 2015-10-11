@@ -5,6 +5,14 @@ font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   padding-right: 200px;
 }
 
+.sponsor{
+  width: 200px;
+  height: 30px;
+  position: absolute;
+  bottom: 0px;
+  right: 180px;
+}
+
 .header {
 background:rgba(0, 0, 0, 0.1);
 border-radius: 25px;
