@@ -37,18 +37,18 @@ module.exports.set = function(app) {
 
 	});
 
-	app.get('/data.tsv', function (req, res){
-		var tsv = fs.readFileSync("./data.tsv");
+	app.get('/raw_data/data.tsv', function (req, res){
+		var tsv = fs.readFileSync("./raw_data/data.tsv");
 	    res.writeHead(200, {'Content-Type': 'text/plain' });
 	    res.end(tsv, 'charset=utf-8');   
 	});
-	app.get('/data-stacked.tsv', function (req, res){
-		var tsv = fs.readFileSync("./data-stacked.tsv");
+	app.get('/raw_data/data-stacked.tsv', function (req, res){
+		var tsv = fs.readFileSync("./raw_data/data-stacked.tsv");
 	    res.writeHead(200, {'Content-Type': 'text/plain' });
 	    res.end(tsv, 'charset=utf-8');   
 	});
-	app.get('/os-data.csv', function (req, res){
-		var tsv = fs.readFileSync("./os-data.csv");
+	app.get('/raw_data/os-data.csv', function (req, res){
+		var tsv = fs.readFileSync("./raw_data/os-data.csv");
 	    res.writeHead(200, {'Content-Type': 'text/plain' });
 	    res.end(tsv, 'charset=utf-8');   
 	});
