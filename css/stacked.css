@@ -9,7 +9,14 @@ background:rgba(0, 0, 0, 0.1);
 border-radius: 25px;
 height: 40px;
 margin-left: 20px;
+}
 
+.sponsor{
+  width: 200px;
+  height: 30px;
+  position: absolute;
+  bottom: -60px;
+  right: 0px;
 }
 .label {
     display: inline;
