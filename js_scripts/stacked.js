@@ -49,7 +49,7 @@
 
   svg.call(tip);
 
-  d3.csv("os-data.csv", function(error, data) {
+  d3.csv("raw_data/os-data.csv", function(error, data) {
 
     data.forEach(function(d) {
       d.date = parseDate(d.date);
