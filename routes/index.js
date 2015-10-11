@@ -11,7 +11,25 @@ module.exports.set = function(app) {
 	app.get('/index-stacked.html',function(req,res){
 	      res.sendfile("index-stacked.html");
 	});
+	app.get('/index-bar.html',function(req,res){
+	      res.sendfile("index-bar.html");
+	});
+	app.get('/css/stacked.css',function(req,res){
+	      res.sendfile("css/stacked.css");
+	});
+	app.get('/css/bar.css',function(req,res){
+	      res.sendfile("css/bar.css");
+	});
+	app.get('/js_scripts/bar.js',function(req,res){
+		console.log("sent bar.js");
+	      res.sendfile("js_scripts/bar.js");
+	});
+	app.get('/js_scripts/stacked.js',function(req,res){
+		console.log("sent stacked.js");
+	      res.sendfile("js_scripts/stacked.js");
+	});
 
+	
 	// Hello world
 	app.get('/hello', function (req, res) {
 	  debugger;
@@ -26,6 +44,23 @@ module.exports.set = function(app) {
 	});
 	app.get('/data-stacked.tsv', function (req, res){
 		var tsv = fs.readFileSync("./data-stacked.tsv");
+	    res.writeHead(200, {'Content-Type': 'text/plain' });
+	    res.end(tsv, 'charset=utf-8');   
+	});
+	app.get('/os-data.csv', function (req, res){
+		var tsv = fs.readFileSync("./os-data.csv");
+	    res.writeHead(200, {'Content-Type': 'text/plain' });
+	    res.end(tsv, 'charset=utf-8');   
+	});
+	app.get('/js_scripts/d3-min.js', function (req, res){
+		console.log("D3 sent");
+		var tsv = fs.readFileSync("./js_scripts/d3-min.js");
+	    res.writeHead(200, {'Content-Type': 'text/plain' });
+	    res.end(tsv, 'charset=utf-8');   
+	});
+	app.get('/js_scripts/d3.tip.v0.6.3.js', function (req, res){
+		console.log("D3 Tips sent");
+		var tsv = fs.readFileSync("./js_scripts/d3.tip.v0.6.3.js");
 	    res.writeHead(200, {'Content-Type': 'text/plain' });
 	    res.end(tsv, 'charset=utf-8');   
 	});
