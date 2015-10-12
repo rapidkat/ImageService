@@ -36,7 +36,7 @@ var tooltip = d3.select("body")
     .style("font", "12px sans-serif")
     .text("tooltip");
 
-d3.csv("raw_data/tenant_aug_2015.csv", function(error, root) {
+d3.csv("raw_data/tenant_aug_2015_top_30.csv", function(error, root) {
   var node = svg.selectAll(".node")
       .data(bubble.nodes(/*classes(root)*/myData(root))
       .filter(function(d) { return !d.children; }))
