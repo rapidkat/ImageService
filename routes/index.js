@@ -11,6 +11,10 @@ module.exports.set = function(app) {
 	app.get('/index-stacked.html',function(req,res){
 	      res.sendfile("index-stacked.html");
 	});
+	app.get('/index-bubble.html',function(req,res){
+	      res.sendfile("index-bubble.html");
+	});
+
 	app.get('/index-bar.html',function(req,res){
 	      res.sendfile("index-bar.html");
 	});
@@ -52,6 +56,17 @@ module.exports.set = function(app) {
 	    res.writeHead(200, {'Content-Type': 'text/plain' });
 	    res.end(tsv, 'charset=utf-8');   
 	});
+	app.get('/raw_data/tenant_aug_2015.csv', function (req, res){
+		var tsv = fs.readFileSync("./raw_data/tenant_aug_2015.csv");
+	    res.writeHead(200, {'Content-Type': 'text/plain' });
+	    res.end(tsv, 'charset=utf-8');   
+	});
+	app.get('/raw_data/tenant_aug_2015_top_30.csv', function (req, res){
+		var tsv = fs.readFileSync("./raw_data/tenant_aug_2015_top_30.csv");
+	    res.writeHead(200, {'Content-Type': 'text/plain' });
+	    res.end(tsv, 'charset=utf-8');   
+	});
+
 	app.get('/js_scripts/d3-min.js', function (req, res){
 		console.log("D3 sent");
 		var tsv = fs.readFileSync("./js_scripts/d3-min.js");
