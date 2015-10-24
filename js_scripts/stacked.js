@@ -5,7 +5,7 @@
     .attr('class', 'd3-tip')
     .offset([-10, 0])
     .html(function(d) {
-      return "<strong>Count: </strong> <span style='color:#FFFF00;text-align:center'>" + (d3.format(','))(d.value) + " (" +d.percent +  "%) </span>";
+      return "<span style='color:#99FFCC;text-align:center'>Count: " + (d3.format(','))(d.value) + " (" +d.percent +  "%) </span>";
     })
 
   var parseDate = d3.time.format("%Y-%m").parse,
